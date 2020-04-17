@@ -164,7 +164,7 @@ class StreamWrapper
             $this->stream->setUploader(
                 $this->bucket->getStreamableUploader(
                     $this->stream,
-                    $options + ['name' => $this->file]
+                    $options + ['name' => $this->file, 'contentType' => mime_content_type($this->file)]
                 )
             );
         } elseif ($mode == 'r') {
